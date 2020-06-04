@@ -1,26 +1,65 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Paper from '@material-ui/core/paper';
+import AppBar from '@material-ui/core/AppBar';
+import Typography from '@material-ui/core/Typography';
+import Toolbar from '@material-ui/core/Toolbar';
 import './App.css';
+import { Grid, Col, Row } from 'react-flexbox-grid'
+import LocationList from './components/LocationList';
+import ForecastExtended from './components/ForecastExtended'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const cities = [
+  'Fogars de la selva',
+  'Buenos Aires,ar',
+  'Washington DC,us',
+  'Bogota,col',
+  'Ciudad de México,mx',
+  'Madrid,es',
+  'Lima,pe'
+];
+
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state = { city: 'Nueva Ciudad'}
+  }
+
+  handleSelectedLocation = city => {
+    this.setState({ city })
+    console.log(`handleSelectedLocation ${city}`)
+  }
+
+  render(){
+    const { city } = this.state 
+    return (
+
+        <Grid>
+          <Row>
+            <AppBar position='sticky'>
+              <Toolbar>
+                <Typography variant='h4' color='inherit'>
+                  Weather App
+                </Typography>
+              </Toolbar>
+            </AppBar>
+          </Row>
+          <Row>
+            <Col xs={12} md={6}>
+              <LocationList cities={ cities }
+                onSelectedLocation={this.handleSelectedLocation}>
+              </LocationList>
+            </Col>
+            <Col xs={12} md={6}>
+              <Paper elevation={4}>
+                <div className='details'>
+                  <ForecastExtended city={city}></ForecastExtended>
+                </div> 
+              </Paper>
+            </Col>
+          </Row>
+        </Grid>
+    );
+  }
 }
-
 export default App;
