@@ -35,6 +35,14 @@
 
 .details{
   background: #999;
-  height: 100vh;
-  width: 100%;
+  height: 85vh;
+  width: calc(100% - 40px);
+  overflow: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (max-width: 48em) {
+  .details{
+    height: 45vh;
+  }
 }
