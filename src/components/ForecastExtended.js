@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ForecastItem from './ForecastItem';
-import WeatherData from './WeatherLocation/WeatherData';
 import transformForecast from './../services/transformForecast'
 import './styles.css';
 
@@ -22,7 +21,7 @@ import './styles.css';
 // }
 
 const api_key = "ada952cc1c964ee165e78aeea202eb47";
-const url = "http://api.openweathermap.org/data/2.5/forecast";
+const url = "https://api.openweathermap.org/data/2.5/forecast";
 
 class ForecastExtended extends Component {
 
@@ -69,6 +68,7 @@ class ForecastExtended extends Component {
     renderProgress = () => {
         return  <h3>Cargando pronostico extendido...</h3>
     }
+    
     render() {
         const { city } = this.props;
         const { forecastData } = this.state;

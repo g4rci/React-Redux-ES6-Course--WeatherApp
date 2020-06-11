@@ -1,6 +1,9 @@
 .locationList{
-    height: 85vh;
+    height: 89vh;
     overflow: auto;
+    background-color: rgba(128, 128, 128, 0.157);
+    border-radius: 5px;
+    margin-top: 9px;
 }
 
 .forecast-title {
@@ -8,12 +11,35 @@
     text-align: center;
     padding-top: 15px;
     padding-bottom: 15px;
+    margin: 0;
 }
 
-@media (max-width: 48em) {
+.details{
+    background: #999;
+    height: 89vh;
+    width: calc(100% - 40px);
+    overflow: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    margin-top: 9px;
+}
+
+.weekDay{
+    color: rgb(90, 89, 89);
+    padding-left: 5px;
+    margin: 0;
+}
+
+@media (max-width: 400px) {
+    .details{
+      height: 45vh;
+    }
+  }
+
+@media (max-width: 400px) {
     .locationList{
         max-height: 45vh;
-        margin-bottom: 20px;
     }
 };
 
