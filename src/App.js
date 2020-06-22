@@ -9,14 +9,14 @@ import ForecastExtendedContainer from './containers/ForecastExtendedContainer';
 import './App.css';
 
 const cities = [
-  'Barcelona,es',
-  'Madrid,es',
-  'Nueva York,usa',
-  'Buenos Aires,ar',
-  'Ciudad de Mexico,mex',
-  'Berlín,ger',
-  'Paris,fr',
-  'Ciudad del Cabo,saf'
+  'Barcelona',
+  'Madrid',
+  'Nueva York',
+  'Buenos Aires',
+  'Ciudad de Mexico',
+  'Berlín',
+  'Paris',
+  'Ciudad del Cabo'
 ];
 
 class App extends Component {
